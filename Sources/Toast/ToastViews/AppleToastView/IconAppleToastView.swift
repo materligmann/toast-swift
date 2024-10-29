@@ -78,7 +78,7 @@ public class IconAppleToastView : UIStackView {
         addArrangedSubview(self.vStack)
     }
 
-    public init(image: UIImage, imageTint: UIColor? = defaultImageTint, title: String, subtitle: String? = nil, viewConfig: ToastViewConfiguration) {
+    public init(image: UIImage, imageTint: UIColor? = defaultImageTint, title: String, subtitle: String? = nil, viewConfig: ToastViewConfiguration, round: Bool) {
         super.init(frame: CGRect.zero)
         commonInit()
         
@@ -93,6 +93,11 @@ public class IconAppleToastView : UIStackView {
             self.subtitleLabel.numberOfLines = viewConfig.subtitleNumberOfLines
             self.subtitleLabel.font = .systemFont(ofSize: 12, weight: .bold)
             self.vStack.addArrangedSubview(self.subtitleLabel)
+        }
+        
+        if round {
+            imageView.layer.cornerRadius = 14
+            imageView.clipsToBounds = true
         }
         
         self.imageView.image = image

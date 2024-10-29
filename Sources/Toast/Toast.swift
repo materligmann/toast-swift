@@ -101,10 +101,11 @@ public class Toast {
         title: String,
         subtitle: String? = nil,
         viewConfig: ToastViewConfiguration = ToastViewConfiguration(),
-        config: ToastConfiguration = ToastConfiguration()
+        config: ToastConfiguration = ToastConfiguration(),
+        round: Bool
     ) -> Toast {
         let view = AppleToastView(
-            child: IconAppleToastView(image: image, imageTint: imageTint, title: title, subtitle: subtitle, viewConfig: viewConfig),
+            child: IconAppleToastView(image: image, imageTint: imageTint, title: title, subtitle: subtitle, viewConfig: viewConfig, round: round),
             config: viewConfig
         )
         return self.init(view: view, config: config)
