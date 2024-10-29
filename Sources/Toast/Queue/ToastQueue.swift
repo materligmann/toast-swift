@@ -11,7 +11,7 @@ public class ToastQueue {
     
     private var queue: [Toast]
     private var multicast = MulticastDelegate<ToastQueueDelegate>()
-    var isShowing = false
+    public var isShowing = false
     
     public init(toasts: [Toast] = [], delegates: [ToastQueueDelegate] = []) {
         self.queue = toasts
