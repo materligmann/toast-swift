@@ -75,12 +75,13 @@ public class Toast {
         image: UIImage,
         imageTint: UIColor? = defaultImageTint,
         title: NSAttributedString,
+        round: Bool,
         subtitle: NSAttributedString? = nil,
         viewConfig: ToastViewConfiguration = ToastViewConfiguration(),
         config: ToastConfiguration = ToastConfiguration()
     ) -> Toast {
         let view = AppleToastView(
-            child: IconAppleToastView(image: image, imageTint: imageTint, title: title, subtitle: subtitle, viewConfig: viewConfig),
+            child: IconAppleToastView(image: image, imageTint: imageTint, title: title, subtitle: subtitle, viewConfig: viewConfig, round: round),
             config: viewConfig
         )
         return self.init(view: view, config: config)
